@@ -1,5 +1,6 @@
 .container{
-  text-align:center
+  text-align:center;
+  align-content:center;
 }
 
 .box{
@@ -7,6 +8,7 @@
   height:80px;
   border:1px solid black;
   display: inline-block;
+  line-height: 30px;
 }
 .board{
 display:inline-flex;
