@@ -1,24 +1,31 @@
+/* eslint-disable no-this-before-super */
 import './App.css';
 import React, {Component} from 'react';
 class App extends Component{
 
-  constructor(){
+  constructor(props){
+    super(props);
     this.state = {
-      board : Array(9).fill("X")
+      board : Array(9).fill(null)
     }
+  }
+
+  handleClick(event){
+    console.log(event.target)
   }
   render(){
 
-    const box= this.state.board.map(box=>{<div className="box">{box}</div>})
+    const Box= this.state.board.map((box,index)=><div className="box" key={index} onClick={()=>{this.handleClick()}}>{box}</div> );
   return (
     <div className="container">
     <h1>Tic Tac Toe</h1>
     <div className="board">
   
-{box}
+      {Box}
     </div>
     </div>
-  );}
+  );
+}
 }
 
 export default App;
